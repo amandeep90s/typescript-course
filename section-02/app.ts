@@ -1,14 +1,9 @@
-const car = {
-  name: 'Audi',
-  model: 2022,
-  color: ['red', 'white', 'black'],
-};
-console.log(car);
+// Tuple is used for defined number of elements with fixed types
 
-let favoriteCar: string[];
-favoriteCar = ['Audi', 'BMW', 'Mercedes'];
-console.log(favoriteCar);
+const tupleExample: [number, string] = [1, 'Hello'];
+// Exception case in tuple scenario
+// tupleExample.push(2);
+// tupleExample.push('World');
 
-for (const color of car.color) {
-  console.log(color.toUpperCase());
-}
+console.log(tupleExample);
+console.log(tupleExample.length);
