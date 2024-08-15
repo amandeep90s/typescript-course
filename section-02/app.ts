@@ -1,12 +1,14 @@
-// const person: { name: string; age: number } = {
-//   name: 'Aman',
-//   age: 30,
-// };
-
-// Better syntax
-const person = {
-  name: 'Aman',
-  age: 30,
+const car = {
+  name: 'Audi',
+  model: 2022,
+  color: ['red', 'white', 'black'],
 };
+console.log(car);
 
-console.log(person);
+let favoriteCar: string[];
+favoriteCar = ['Audi', 'BMW', 'Mercedes'];
+console.log(favoriteCar);
+
+for (const color of car.color) {
+  console.log(color.toUpperCase());
+}
