@@ -1,5 +1,5 @@
 // Union types are used to combine multiple types into one type.
-function combine(value1: number | string, value2: number | string) {
+function combine2(value1: number | string, value2: number | string) {
   let result: string | number;
   if (typeof value1 === 'number' && typeof value2 === 'number') {
     result = value1 + value2;
@@ -9,8 +9,8 @@ function combine(value1: number | string, value2: number | string) {
   return result;
 }
 
-const combinedAges = combine(30, 26);
+const combinedAges = combine2(30, 26);
 console.log(combinedAges);
 
-const combineNames = combine('Max', 'Anna');
+const combineNames = combine2('Max', 'Anna');
 console.log(combineNames);
