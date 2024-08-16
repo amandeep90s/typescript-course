@@ -6,3 +6,4 @@
 4. We can exclude any file or files with exclude property of tsconfig.json file. eg: "exclude": ["*.dev.ts", "app.ts]
 5. node_modules folder be default excluded in ts settings.
 6. include property is used to add any ts file.
+7. target property is used to convert the ts code into particular javascript version for browser compatibility.
