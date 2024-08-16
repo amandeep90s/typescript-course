@@ -14,3 +14,13 @@ console.log(add(2, 3)); // 5
 // Default Parameters
 const multiply = (a: number, b: number = 2) => a * b;
 console.log(multiply(4)); // 4
+
+// Rest Parameters
+// Rest parameters allow you to represent an indefinite number of arguments as an array.
+// With rest parameters, you can create functions that take a variable number of arguments.
+const hobbies = ["Cooking", "Sports"];
+const extraHobby = ["Reading"];
+hobbies.push(...extraHobby);
+
+const person = { name: "Aman", age: 30 };
+const copiedPerson = { ...person };
