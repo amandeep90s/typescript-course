@@ -7,3 +7,4 @@
 5. node_modules folder be default excluded in ts settings.
 6. include property is used to add any ts file.
 7. target property is used to convert the ts code into particular javascript version for browser compatibility.
+8. libs property are used for dom related api computation.
