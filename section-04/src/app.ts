@@ -11,3 +11,6 @@ console.log(myName, age); // Amandeep Singh 30
 // Arrow Functions
 const add = (a: number, b: number) => a + b;
 console.log(add(2, 3)); // 5
+// Default Parameters
+const multiply = (a: number, b: number = 2) => a * b;
+console.log(multiply(4)); // 4
