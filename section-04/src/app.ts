@@ -29,3 +29,11 @@ const copiedPerson = { ...person };
 const addNumbers = (...numbers: number[]) =>
   numbers.reduce((prev: number, current: number) => prev + current, 0);
 console.log(addNumbers(3, 5, 6, 6, 7));
+
+// Destructuring
+// Array Destructuring
+const [firstHobby, secondHobby, ...restHobbies] = hobbies;
+console.log(firstHobby, secondHobby, restHobbies); // Cooking Sports
+// Object Destructuring
+const { name: fullName, age: myAge } = person;
+console.log(fullName, myAge); // Aman 30
