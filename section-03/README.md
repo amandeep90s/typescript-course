@@ -11,4 +11,4 @@
 9. sourceMap property is used to generate map files automatically and is works as a bridge between browser and dev for debugging.
 10. noEmitOnError property is used for strict compiliation. If any ts file is having compilation issue it will not generate js files if this property is set to true.
 11. (!) exclamation sumbol is used to explicitly tell ts that particular element is not null.
-12. chrome debugger extension is used for debugging inside vscode ide and also sourceMap needs to enable.
+12. chrome debugger extension is used for debugging inside vscode ide and also sourceMap needs to enable. (https://code.visualstudio.com/docs/typescript/typescript-debugging) (https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) (https://www.typescriptlang.org/docs/handbook/compiler-options.html)
