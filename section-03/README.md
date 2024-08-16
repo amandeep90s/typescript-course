@@ -9,3 +9,4 @@
 7. target property is used to convert the ts code into particular javascript version for browser compatibility.
 8. libs property are used for dom related api computation.
 9. sourceMap property is used to generate map files automatically and is works as a bridge between browser and dev for debugging.
+10. noEmitOnError property is used for strict compiliation. If any ts file is having compilation issue it will not generate js files if this property is set to true.
