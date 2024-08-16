@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "lite-server",
+    "dev:watch": "tsc app.ts --watch",
+    "dev:w": "tsc app.ts -w"
   },
   "keywords": [],
   "author": "",
