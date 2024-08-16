@@ -7,3 +7,7 @@ if (age > 50) {
 }
 console.log(myName, age); // Amandeep Singh 30
 // console.log(myFavSport); // Error: Cannot find name 'myFavSport'.
+
+// Arrow Functions
+const add = (a: number, b: number) => a + b;
+console.log(add(2, 3)); // 5
