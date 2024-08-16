@@ -10,3 +10,4 @@
 8. libs property are used for dom related api computation.
 9. sourceMap property is used to generate map files automatically and is works as a bridge between browser and dev for debugging.
 10. noEmitOnError property is used for strict compiliation. If any ts file is having compilation issue it will not generate js files if this property is set to true.
+11. (!) exclamation sumbol is used to explicitly tell ts that particular element is not null.
