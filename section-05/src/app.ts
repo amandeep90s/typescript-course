@@ -1,6 +1,7 @@
 // Interface described the structure of an object.
 interface Named {
   readonly name: string; // readonly: can't be changed after object initialization (default)
+  outputName?: string; // optional property with a question mark
 }
 
 // We can extend an interface to inherit its properties
