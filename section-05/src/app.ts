@@ -20,8 +20,41 @@ class Department {
   }
 }
 
-const accounting = new Department("A1", "Accounting");
+// Inheritance
+class ITDepartment extends Department {
+  admins: string[];
+
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
+}
+
+const it = new ITDepartment("A1", ["Aman", "Babbu"]);
+it.describe();
+it.addEmployees("Aman");
+it.addEmployees("Manu");
+it.printEmployeesInformation();
+console.log(it);
+
+class AccountingDepartment extends Department {
+  constructor(
+    id: string,
+    public reports: string[],
+  ) {
+    super(id, "Accounting");
+  }
+
+  addReport(report: string) {
+    this.reports.push(report);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
 accounting.describe();
-accounting.addEmployees("Max");
-accounting.addEmployees("Manu");
-accounting.printEmployeesInformation();
+accounting.addReport("Report 3");
+accounting.printReports();
