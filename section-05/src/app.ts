@@ -1,14 +1,14 @@
-class Department {
+// We can use abstract class to define a blueprint for other classes
+// We can't create an instance of an abstract class
+abstract class Department {
   protected employees: string[] = []; // protected: can be accessed by child classes
 
   constructor(
-    private readonly id: string, // private: can't be accessed outside the class
+    protected readonly id: string, // private: can't be accessed outside the class
     public name: string, // public: can be accessed outside the class (default)
   ) {}
 
-  describe() {
-    console.log(`Department ${this.id}: ${this.name}`);
-  }
+  abstract describe(this: Department): void;
 
   addEmployees(employee: string) {
     this.employees.push(employee);
@@ -28,14 +28,18 @@ class ITDepartment extends Department {
     super(id, "IT");
     this.admins = admins;
   }
+
+  describe(): void {
+    console.log("IT Department ID: " + this.id);
+  }
 }
 
 const it = new ITDepartment("A1", ["Aman", "Babbu"]);
 it.describe();
-it.addEmployees("Aman");
-it.addEmployees("Manu");
-it.printEmployeesInformation();
-console.log(it);
+// it.addEmployees("Aman");
+// it.addEmployees("Manu");
+// it.printEmployeesInformation();
+// console.log(it);
 
 class AccountingDepartment extends Department {
   private lastReport: string;
@@ -83,17 +87,21 @@ class AccountingDepartment extends Department {
   static createEmployee(name: string) {
     return { name, year: this.FiscalYear };
   }
+
+  describe() {
+    console.log(`Accounting Department ID: ${this.id}`);
+  }
 }
 
 const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
 // Getter method
-console.log(accounting.mostRecentReport);
+// console.log(accounting.mostRecentReport);
 // Setter method
 accounting.mostRecentReport = "Report 4";
 accounting.describe();
-accounting.addReport("Report 3");
-accounting.printReports();
-accounting.addEmployee("Aman");
-accounting.addEmployee("Manu");
-accounting.printEmployeesInformation();
-console.log(AccountingDepartment.createEmployee("Amandeep"));
+// accounting.addReport("Report 3");
+// accounting.printReports();
+// accounting.addEmployee("Aman");
+// accounting.addEmployee("Manu");
+// accounting.printEmployeesInformation();
+// console.log(AccountingDepartment.createEmployee("Amandeep"));
