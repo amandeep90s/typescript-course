@@ -125,3 +125,12 @@ const userInput = document.getElementById("user-input");
 if (userInput) {
   (userInput as HTMLInputElement).value = "Hi there!"; // Third Example
 }
+
+// Index properties
+interface ErrorContainer {
+  [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+  email: "Not a valid email",
+};
