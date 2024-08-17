@@ -39,6 +39,8 @@ console.log(it);
 
 class AccountingDepartment extends Department {
   private lastReport: string;
+  // Static property can be accessed without creating an instance of the class
+  static FiscalYear = 2020;
 
   get mostRecentReport() {
     if (this.lastReport) {
@@ -77,6 +79,10 @@ class AccountingDepartment extends Department {
     }
     this.employees.push(name);
   }
+  // Static method can be accessed without creating an instance of the class
+  static createEmployee(name: string) {
+    return { name, year: this.FiscalYear };
+  }
 }
 
 const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
@@ -90,3 +96,4 @@ accounting.printReports();
 accounting.addEmployee("Aman");
 accounting.addEmployee("Manu");
 accounting.printEmployeesInformation();
+console.log(AccountingDepartment.createEmployee("Amandeep"));
