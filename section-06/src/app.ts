@@ -117,3 +117,11 @@ function moveAnimal(animal: Animal) {
 }
 
 moveAnimal({ type: "horse", runningSpeed: 12 });
+
+// Type casting with "as" keyword and ! operator
+// const userInput = document.getElementById("user-input")! as HTMLInputElement; // First Example
+// const userInput = <HTMLInputElement>document.getElementById("user-input")!; // Second Example
+const userInput = document.getElementById("user-input");
+if (userInput) {
+  (userInput as HTMLInputElement).value = "Hi there!"; // Third Example
+}
