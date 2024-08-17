@@ -29,3 +29,12 @@ const user: Greetable = new Person("Aman", 25);
 console.log(user);
 
 user.greet("Hello, I am ");
+
+// We can use interface to define a function type
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+add = (a: number, b: number) => a + b;
+console.log(add(5, 10));
