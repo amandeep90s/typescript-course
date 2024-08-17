@@ -43,8 +43,11 @@ it.describe();
 
 class AccountingDepartment extends Department {
   private lastReport: string;
+
   // Static property can be accessed without creating an instance of the class
   static FiscalYear = 2020;
+
+  private static instance: AccountingDepartment;
 
   get mostRecentReport() {
     if (this.lastReport) {
@@ -60,12 +63,24 @@ class AccountingDepartment extends Department {
     this.addReport(value);
   }
 
-  constructor(
+  // private constructor is used to make sure that we can't create an instance of the class
+  // from outside the class
+  private constructor(
     id: string,
     public reports: string[],
   ) {
     super(id, "Accounting");
     this.lastReport = reports[0];
+  }
+
+  // Singleton pattern: It ensures that we have only one instance of the class
+  // and provides a global point of access to it
+  static getInstance() {
+    if (AccountingDepartment.instance) {
+      return this.instance;
+    }
+    this.instance = new AccountingDepartment("A2", []);
+    return this.instance;
   }
 
   addReport(report: string) {
@@ -93,7 +108,9 @@ class AccountingDepartment extends Department {
   }
 }
 
-const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
+const accounting = AccountingDepartment.getInstance();
+const accounting2 = AccountingDepartment.getInstance();
+console.log(accounting, accounting2);
 // Getter method
 // console.log(accounting.mostRecentReport);
 // Setter method
