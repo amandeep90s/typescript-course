@@ -47,6 +47,11 @@ type Universal = Combinable & Numeric;
 // From both types it took common types
 const a: Universal = 11; // number
 
+// Function overloads example
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: number, b: string): string;
+function add(a: string, b: number): string;
 function add(a: Combinable, b: Combinable) {
   // Type guard with typeof
   if (typeof a === "string" || typeof b === "string") {
@@ -54,6 +59,9 @@ function add(a: Combinable, b: Combinable) {
   }
   return a + b;
 }
+
+const result = add("Aman", "Kumar");
+result.split(" ");
 
 class Car {
   drive() {
