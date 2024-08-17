@@ -38,15 +38,33 @@ it.printEmployeesInformation();
 console.log(it);
 
 class AccountingDepartment extends Department {
+  private lastReport: string;
+
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
+    }
+    throw new Error("No report found.");
+  }
+
+  set mostRecentReport(value: string) {
+    if (!value) {
+      throw new Error("Please provide a valid value");
+    }
+    this.addReport(value);
+  }
+
   constructor(
     id: string,
     public reports: string[],
   ) {
     super(id, "Accounting");
+    this.lastReport = reports[0];
   }
 
   addReport(report: string) {
     this.reports.push(report);
+    this.lastReport = report;
   }
 
   printReports() {
@@ -62,6 +80,10 @@ class AccountingDepartment extends Department {
 }
 
 const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
+// Getter method
+console.log(accounting.mostRecentReport);
+// Setter method
+accounting.mostRecentReport = "Report 4";
 accounting.describe();
 accounting.addReport("Report 3");
 accounting.printReports();
