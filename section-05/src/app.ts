@@ -1,6 +1,11 @@
 // Interface described the structure of an object.
-interface Greetable {
+interface Named {
   readonly name: string; // readonly: can't be changed after object initialization (default)
+}
+
+// We can extend an interface to inherit its properties
+// We can extend multiple interfaces using a comma
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
