@@ -1,9 +1,9 @@
 class Department {
-  private employees: string[] = [];
+  protected employees: string[] = []; // protected: can be accessed by child classes
 
   constructor(
-    private readonly id: string,
-    public name: string,
+    private readonly id: string, // private: can't be accessed outside the class
+    public name: string, // public: can be accessed outside the class (default)
   ) {}
 
   describe() {
@@ -52,9 +52,19 @@ class AccountingDepartment extends Department {
   printReports() {
     console.log(this.reports);
   }
+
+  addEmployee(name: string) {
+    if (name === "Aman") {
+      return;
+    }
+    this.employees.push(name);
+  }
 }
 
 const accounting = new AccountingDepartment("A2", ["Report 1", "Report 2"]);
 accounting.describe();
 accounting.addReport("Report 3");
 accounting.printReports();
+accounting.addEmployee("Aman");
+accounting.addEmployee("Manu");
+accounting.printEmployeesInformation();
