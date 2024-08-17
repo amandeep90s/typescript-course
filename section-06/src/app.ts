@@ -151,3 +151,9 @@ const fetchedUserData = {
 };
 
 console.log(fetchedUserData?.job?.title);
+
+// Nullish coalescing
+// It is used to check null or undefined values
+const userInputNull = null;
+const storedData = userInputNull ?? "DEFAULT";
+console.log(storedData);
