@@ -4,12 +4,14 @@
 // Decorators are just a function that can be used to extend the behavior of the class, method, property, or parameter.
 // Decorators are executed when the class is defined, not when the class is instantiated.
 
-function Logger(constructor: Function) {
-  console.log("Logging...");
-  console.log(constructor);
+function Logger(logString: string = "LOGGING") {
+  return function (constructor: Function) {
+    console.log(logString);
+    console.log(constructor);
+  };
 }
 
-@Logger
+@Logger("Logging - Person Class")
 class Person {
   name = "Amandeep";
 
