@@ -23,7 +23,8 @@ function WithTemplate(template: string, hookId: string) {
   };
 }
 
-// @Logger("Logging - Person Class")
+// Multiple decorators run from bottom to top.
+@Logger("Logging - Person Class")
 @WithTemplate("<h1>My Person Object</h1>", "app")
 class Person {
   name = "Amandeep";
